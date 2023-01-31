@@ -28,12 +28,12 @@ client.on('authenticated', (session) => {
 });
 client.on('ready', () => {
     console.log('Client is ready!');
-    for (let i in number) {
+    for (let data of number) {
         try {
-            client.sendMessage(`${number[i].no}@c.us`, `${number[i].nama}`);
-            console.log(`${number[i].no}` + " success")
+            client.sendMessage(`${data.no}@c.us`, `${data.nama}`);
+            console.log(`${data.no} success`)
         } catch (error) {
-            console.log(error);
+            console.log(`${data.no} failed`);
         }
 
     }
